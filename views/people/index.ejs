@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Soft Lyfe</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+  <!-- Materialize Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JavaScript for Materialize -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper purple">
+        <a href="" class="brand-logo left">Soft Lyfe</a>
+        <ul class="right">
+          <li><a href="/">Home</a></li>
+          <li>
+            <% if(user) { %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i></a>}
+            <% } else { %>
+                <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login With Google</a>
+                <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <header class="container">
+
+  </header>
+  <main class="container">
+    <div class="row">
+      <div id="people" class="col s12">
+        <% people.forEach(function(people) { %>
+          <div class="card purple">
+            <div class="card-content white-text">
+              <div>
+                <span class="card-title">
+                  <i class="small material-icons">perm_identity</i>
+                  <span class="people-name"><%= people.name %></span>
+                  <% if (people.mood) { %><span class="badge white">SL <%= people.name %></span><% } %>
+                </span>
+              </div>
+              <ul class="collection">
+                <% people.mood.forEach(function(fact) { %>
+                  <li class="collection-item blue-grey-text text-darken-2"><%= mood.text %></li>
+                <% }) %>
+              </ul>
+              <!-- Place Add Fact UI Here -->
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

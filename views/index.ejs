@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Soft Lyfe</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+  <!-- Materialize Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JavaScript for Materialize -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper purple">
+        <a href="" class="brand-logo left">Soft Lyfe</a>
+        <ul class="right">
+          <li><a href="/people">users</a></li>
+          <li>
+            <% if(user) { %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i></a>}
+            <% } else { %>
+                <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login With Google</a>
+                <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <header class="container">
+    <h2>Welcome</h2>
+    </header>
+    </body>
+    </html>
+  
